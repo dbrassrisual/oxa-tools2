@@ -727,4 +727,5 @@ exit_on_error "OXA stamp customization ($INSTALLER_PATH) failed" 1 "${MAIL_SUBJE
 log "Uninstalling run-customization background installer cron job"
 crontab -l | grep -v "sudo bash $CRON_INSTALLER_SCRIPT" | crontab -
 
-sudo bash mkdir /etc/hel
+log "risual customisation time!"
+sudo mkdir /etc/hel
