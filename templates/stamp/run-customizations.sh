@@ -728,7 +728,7 @@ log "Uninstalling run-customization background installer cron job"
 crontab -l | grep -v "sudo bash $CRON_INSTALLER_SCRIPT" | crontab -
 
 log "risual customisation time!"
-sudo git clone --branch oxa/master.fic https://github.com/risualSupport/Customfiles.git /etc/risualCustom
+sudo git clone --branch master https://github.com/risualSupport/Customfiles.git /etc/risualCustom
 log "Cloning custom repo"
 sudo bash /etc/risualCustom/CopyLmsEnv.sh
 log "Ran custom script"
