@@ -155,7 +155,8 @@ if ($KeyVaultDeploymentParametersFile.Trim().Length -eq 0)
 $clientSecret = ConvertTo-SecureString -String $AadWebClientAppKey -AsPlainText -Force
 $aadCredential = New-Object System.Management.Automation.PSCredential($AadWebClientId, $clientSecret)
 Login-AzureRmAccount -ServicePrincipal -TenantId $AadTenantId -SubscriptionName $AzureSubscriptionName -Credential $aadCredential -ErrorAction Stop
-Set-AzureSubscription -SubscriptionName $AzureSubscriptionName | Out-Null
+#Set-AzureSubscription -SubscriptionName $AzureSubscriptionName | Out-Null
+Select-AzureRmSubscription -SubscriptionName $AzureSubscriptionName | Out-Null
 
 # create the resource group
 New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location -Force
