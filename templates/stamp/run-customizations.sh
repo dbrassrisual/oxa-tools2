@@ -737,7 +737,7 @@ sudo /edx/bin/supervisorctl restart edxapp:
 
 log "Adding and compiling risual theme"
 log "Cloning risual Repo for risual theme"
-sudo git clone https://github.com/risualSupport/edx-theme.git --branch oxa/master.fic themes
+sudo git clone --branch oxa/master.fic https://github.com/risualSupport/edx-theme.git themes
 log "Change ownership on the folder"
 sudo chown -R edxapp:edxapp /edx /app/edxapp/themes
 sudo chmod -R u+rw /edx /app/edxapp/themes
