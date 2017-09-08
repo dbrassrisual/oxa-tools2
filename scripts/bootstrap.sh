@@ -637,6 +637,7 @@ sudo /edx/bin/supervisorctl restart edxapp:
 
 
 log "Adding and compiling risual theme"
+Sudo mv /edx /app/edxapp/themes /edx /app/edxapp/themes.old
 
 log "Cloning risual Repo for risual theme"
 
@@ -655,8 +656,6 @@ source /edx/app/edxapp/edxapp_env
 cd /edx/app/edxapp/edx-platform
 
 paver update_assets lms --settings=aws
-
-exit 
 
 log "Restart website"
 
