@@ -726,27 +726,3 @@ exit_on_error "OXA stamp customization ($INSTALLER_PATH) failed" 1 "${MAIL_SUBJE
 # Remove the task if it is already setup
 log "Uninstalling run-customization background installer cron job"
 crontab -l | grep -v "sudo bash $CRON_INSTALLER_SCRIPT" | crontab -
-
-log "risual customisation time!"
-sudo git clone --branch master https://github.com/risualSupport/Customfiles.git /etc/risualCustom
-log "Cloning custom repo"
-log "Pulling down custom environment files"
-sudo mv /edx/app/edxapp/lms.env.json /edx/app/edxapp/lms.env.json.bak
-sudo cp -f /etc/risualCustom/lms.env.json /edx/app/edxapp/lms.env.json 
-sudo /edx/bin/supervisorctl restart edxapp: 
-
-log "Adding and compiling risual theme"
-log "Cloning risual Repo for risual theme"
-sudo git clone --branch oxa/master.fic https://github.com/risualSupport/edx-theme.git themes
-log "Change ownership on the folder"
-sudo chown -R edxapp:edxapp /edx /app/edxapp/themes
-sudo chmod -R u+rw /edx /app/edxapp/themes
-sudo -H -u edxapp bash
-source /edx/app/edxapp/edxapp_env
-cd /edx/app/edxapp/edx-platform
-paver update_assets lms --settings=aws
-Exit
-
-log "Restart website"
-sudo /edx/bin/supervisorctl restart edxapp:lms
-log "Done"
