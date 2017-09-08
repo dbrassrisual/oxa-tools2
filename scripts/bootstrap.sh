@@ -663,5 +663,5 @@ sudo /edx/bin/supervisorctl restart edxapp:lms
 
 log "risual Done"
 
-send_notification "risual Done" "risual Customisation Status" "${CLUSTER_ADMIN_EMAIL}"
+send_notification "risual Done" "OXA Bootstrap - risedulrn" "${CLUSTER_ADMIN_EMAIL}"
 exit 0
