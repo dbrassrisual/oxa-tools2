@@ -610,7 +610,7 @@ fi
 # at this point, we have succeeded
 if [ "$EDX_ROLE" == "jb" ] ; 
 then
-    NOTIFICATION_MESSAGE="Installation of the EDX Database was completed successfully."
+    NOTIFICATION_MESSAGE="Installation of the EDX Database was completed successfully.
 elif [ "$EDX_ROLE" == "vmss" ] ;
 then
     NOTIFICATION_MESSAGE="Installation of the EDX Application (VMSS) was completed successfully."
@@ -637,7 +637,7 @@ sudo /edx/bin/supervisorctl restart edxapp:
 
 
 log "Adding and compiling risual theme"
-Sudo mv /edx /app/edxapp/themes /edx /app/edxapp/themes.old
+Sudo mv /edx/app/edxapp/themes /edx/app/edxapp/themes.old
 
 log "Cloning risual Repo for risual theme"
 
@@ -663,5 +663,5 @@ sudo /edx/bin/supervisorctl restart edxapp:lms
 
 log "risual Done"
 
-send_notification "risual Done" "OXA Bootstrap - risedulrn" "${CLUSTER_ADMIN_EMAIL}"
+send_notification "risual Done" "${MAIL_SUBJECT}" "${CLUSTER_ADMIN_EMAIL}"
 exit 0
