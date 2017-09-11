@@ -637,7 +637,7 @@ sudo /edx/bin/supervisorctl restart edxapp:
 
 
 log "Adding and compiling risual theme"
-Sudo mv /edx/app/edxapp/themes /edx/app/edxapp/themes.old
+sudo mv /edx/app/edxapp/themes /edx/app/edxapp/themes.old
 
 log "Cloning risual Repo for risual theme"
 
