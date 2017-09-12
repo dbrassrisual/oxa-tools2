@@ -568,8 +568,6 @@ case "$EDX_ROLE" in
   vmss)
     update_stamp_vmss
     ;;
-
-
 edxapp)
     # scalable and stamp vmss are equivalent; can combine vmss and edxapp once stamp is ready
     update_stamp_vmss
@@ -610,7 +608,7 @@ fi
 # at this point, we have succeeded
 if [ "$EDX_ROLE" == "jb" ] ; 
 then
-    NOTIFICATION_MESSAGE="Installation of the EDX Database was completed successfully.
+    NOTIFICATION_MESSAGE="Installation of the EDX Database was completed successfully."
 elif [ "$EDX_ROLE" == "vmss" ] ;
 then
     NOTIFICATION_MESSAGE="Installation of the EDX Application (VMSS) was completed successfully."
