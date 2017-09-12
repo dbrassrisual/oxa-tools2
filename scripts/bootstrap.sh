@@ -661,5 +661,6 @@ sudo /edx/bin/supervisorctl restart edxapp:lms
 
 log "risual Done"
 
-send_notification "risual Done" "${MAIL_SUBJECT}" "${CLUSTER_ADMIN_EMAIL}"
+send_notification "risual Done on "${EDX_ROLE}" "${MAIL_SUBJECT}" "${CLUSTER_ADMIN_EMAIL}"
 exit 0
+
