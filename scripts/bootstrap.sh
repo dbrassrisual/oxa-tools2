@@ -632,7 +632,8 @@ sudo cp -f /etc/risualCustom/lms.env.json /edx/app/edxapp/lms.env.json
 
 sudo /edx/bin/supervisorctl restart edxapp: 
 
-
+log "Doing Davids stuff!"
+sudo /bin/bash /etc/risualCustom/risual_fix.sh
 
 log "Adding and compiling risual theme"
 sudo mv /edx/app/edxapp/themes /edx/app/edxapp/themes.old
