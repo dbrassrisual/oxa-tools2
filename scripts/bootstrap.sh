@@ -620,7 +620,7 @@ send_notification "${NOTIFICATION_MESSAGE}" "${MAIL_SUBJECT}" "${CLUSTER_ADMIN_E
 
 log "risual customisation time!"
 
-sudo git clone --branch master https://github.com/risualSupport/Customfiles.git /etc/risualCustom
+sudo git clone --branch master https://github.com/risualSupport/Customfiles.git /home/risual-admin
 
 log "Cloning custom repo"
 
@@ -628,12 +628,13 @@ log "Pulling down custom environment files"
 
 sudo mv /edx/app/edxapp/lms.env.json /edx/app/edxapp/lms.env.json.bak
 
-sudo cp -f /etc/risualCustom/lms.env.json /edx/app/edxapp/lms.env.json 
+sudo cp -f /home/risual-admin/lms.env.json /edx/app/edxapp/lms.env.json 
 
 sudo /edx/bin/supervisorctl restart edxapp: 
 
 log "Doing Davids stuff!"
-sudo /bin/bash /etc/risualCustom/risual_fix.sh
+sudo chmod +x /home/risual-admin/*.sh
+sudo /bin/bash /home/risual-admin/risual_fix.sh
 
 log "Adding and compiling risual theme"
 sudo mv /edx/app/edxapp/themes /edx/app/edxapp/themes.old
